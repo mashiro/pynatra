@@ -25,6 +25,7 @@ class Base(object):
         for map in self.maps:
             if map[0] == method and re.match(map[1], path):
                 body = map[2]()
+                break
 
         if body is None:
             start_response('404 Not Found', [('Content-Type', 'text/plain')])
